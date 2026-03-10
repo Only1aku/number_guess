@@ -1,0 +1,310 @@
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+\c number_guess
+PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
+cd number_guessing_game
+nano number_guess.sh
+__vsc_prompt_cmd_original
+\q
+chmod +x number_guess.sh
+./number_guess.sh
+cd number_guessing_game
+git init
+git add number_guess.sh
+git commit -m "Initial commit: add number_guess.sh script"
+git status
+cd number_guessing_game
+git init
+git add number_guess.sh
+git commit -m "Initial commit: add number_guess.sh script"
+git add .
+git commit -m "Add database schema for users and games"
+git add number_guess.sh
+git commit -m "Implement user login and welcome message"
+git add number_guess.sh
+git commit -m "Add guessing loop with input validation"
+git add number_guess.sh
+git commit -m "Record game results in database"
+git log --oneline
+git add number_guess.sh
+git commit -m "Initial commit: add number_guess.sh script"
+git status
+git add number_guess.sh
+git commit -m "Initial commit: add number_guess.sh script"
+git log --oneline
+git branch
+git branch -M main
+git status
+git add .
+git commit -m "Finalize project implementation"
+git log --oneline
+__vsc_prompt_cmd_original
+echo "CREATE TABLE users(...);" > schema.sql
+git add schema.sql
+git commit -m "Add database schema for users and games"
+__vsc_prompt_cmd_original
+__vsc_prompt_cmd_original
+nano number_guess.sh
+git --online
+git log --online
+git log --oneline
+echo "# Number Guessing Game" > README.md
+echo "A Bash + PostgreSQL project for freeCodeCamp." >> README.md
+git add README.md
+git commit -m "Add README with project description"
+git add number_guess.sh
+git commit -m "Add comments to explain script logic"
+git log --oneline
+git status
+git add number_guess.sh
+git commit -m "Add comments to explain script logic"
+echo "Enter your username:"
+echo "Enter your username (cannot be empty):"
+git add number_guess.sh
+git commit -m "Improve input validation and error messages"
+git log --oneline
+git add number_guess.sh
+git commit -m "Add comments to explain script logic"
+git add number_guess.sh
+git commit -m "Improve input validation and error messages"
+git status
+__vsc_prompt_cmd_original
+nano number_guess.sh
+git add number_guess.sh
+git commit -m "Add comments to explain script logic"
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git log --oneline
+git add number_guess.sh
+git commit -m "Add comments to explain script logic"
+__vsc_prompt_cmd_original
+git log --oneline
+git status
+git add README.md
+git commit -m "Add usage instructions to README"
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+git log --oneline
+git status
+git add number_guess.sh
+git commit -m "Fix non-integer input message format"
+git log --oneline
+git status
+number_guess.sh
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+git log --oneline
+git status
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+git log --oneline
+git status
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+nano number_guess.sh
+git add number_guess.sh
+git commit -m "Fix welcome back message format"
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git rebase -i --root
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git rebase -i --root
+git log --oneline
+git rebase -i --root
+git rebase -i --root
+git rebase -i --root
+git rebase -i --root
+git rebase -i --root
+git log --oneline
+cd /number_guessing_game
+bash number_guess.sh
+bash number_guess.sh
+psql --username=freecodecamp --dbname=number_guess
+./number_guess.sh
+./number_guess.sh
+$PSQL "INSERT INTO users(username) VALUES('$USERNAME')"
+PSQL="psql --username=freecodecamp --dbname=number_guess -t --no-align -c"
+$PSQL "INSERT INTO users(username) VALUES('$USERNAME')"
+$PSQL "INSERT INTO users(username) VALUES('$USERNAME')"
+camper: /number_guessing_game$ $PSQL "INSERT INTO users(username) VALUES('$USERNAME')"
+ERROR: duplicate key value violates unique constraint "users_username_key"
+__vsc_prompt_cmd_original
+$PSQL "INSERT INTO users(username) VALUES('$USERNAME')"
+git branch
+git checkout main
+git status
+On branch main
+nothing to commit, working tree clean
+git status
+git add number_guess.sh
+git commit -m "fix: suppress INSERT output from database commands"
+__vsc_prompt_cmd_original
+git status
+git branch
+git checkout main
+git add number_guess.sh
+git commit -m "fix: finalize number guessing game script"
+__vsc_prompt_cmd_original
+pg_dump -cC --inserts -U freecodecamp number_guess > number_guess.sql
+ls --color=auto
+git add number_guess.sql number_guess.sh
+git commit -m "chore: add database dump and final script"
+git push origin main
+remote add origin https://github.com/Only1aku/number_guessing_game.git
+git remote add origin https://github.com/Only1aku/number_guessing_game.git
+git push -u origin main
+git remote -v
+gh auth login
+git config --global user.name "Only1aku"
+git config --global user.email "scopio.alex@gmail.com"
+git push -u origin main
+git config --global user.name Only1aku
+git config --global user.email scopio.alex@gmail.com
+git remote -v
+git push -u origin main
+git remote -v
+git push -u origin main
+[ -d "$HOME/bin" ]
+[ -d "$HOME/.local/bin" ]
+'/vscode/bin/linux-x64/ce099c1ed25d9eb3076c11e4a280f3eb52b4fbeb/node' -p '"17f482106c45" + JSON.stringify(process.env) + "17f482106c45"'
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ "${VSCODE_PREVENT_SHELL_HISTORY:-}" = "1" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[ -z "${VSCODE_PYTHON_AUTOACTIVATE_GUARD:-}" ]
+export VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+[ -n "${VSCODE_PYTHON_BASH_ACTIVATE:-}" ]
+for var in "${!VSCODE_PYTHON_@}"
+case "$var" in
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "${HISTCONTROL:-}" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[ -n "$STARSHIP_SESSION_KEY" ]
+[ -n "$POSH_SESSION_ID" ]
+builtin printf '\e]633;P;HasRichCommandDetection=True\a'
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+git remote -v
+git push -u origin main
+git branch
+git branch -M main
+git add number_guess.sh number_guess.sql
+git commit -m "final project files"
+git add number_guessing_game
+git add .freeCodeCamp/test
