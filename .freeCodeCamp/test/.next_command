@@ -308,3 +308,12 @@ git add number_guess.sh number_guess.sql
 git commit -m "final project files"
 git add number_guessing_game
 git add .freeCodeCamp/test
+git commit -m "final project files"
+git push -u origin main
+git remote add origin https://github.com/Only1aku/number_guessing_game.git
+git remote -v
+git add number_guessing_game
+git commit -m "final project files"
+git status
+git add number_guessing_game
+git add .freeCodeCamp/test/.cwd .freeCodeCamp/test/.next_command
